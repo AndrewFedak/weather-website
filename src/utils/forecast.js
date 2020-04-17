@@ -10,8 +10,8 @@ const forecast = (latitude, longitude, callback) => {
             } else if (bodyError) {
                 callback("Undefined forecast for this are", undefined)
             } else {
-                const {weather_descriptions, temperature, feelslike} = current;
-                callback(undefined, `${weather_descriptions[0]} It is ${temperature} degrees outside and it feels like ${feelslike} degree`);
+                const {weather_descriptions, temperature, feelslike, cloudcover} = current;
+                callback(undefined, `${weather_descriptions[0]} It is ${temperature} degrees outside and it feels like ${feelslike} degree; Cloud cover = ${cloudcover}`);
             }
         });
 };
